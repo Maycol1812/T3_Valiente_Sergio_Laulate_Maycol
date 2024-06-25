@@ -1,0 +1,94 @@
+﻿@model T3_Valiente_Sergio_Laulate_Maycol.Models.Libro;
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h4>Información del libro</h4>
+
+<form method="post" asp-action="Eliminar">
+    <input asp-for="Id" hidden />
+    <div class="border p-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <h2 class="text-intro pl-3">¿Eliminar el libro permanentemente?</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col md-6">
+                    <label asp-for="Titulo" class="form-label">Titulo del libro</label>
+                    <input asp-for="Titulo" disabled class="form-control" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col md-6">
+                    <label asp-for="Tema" class="form-label">Tema</label>
+                    <input asp-for="Tema" disabled class="form-control" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col md-6">
+                    <label asp-for="Editorial" class="form-label">Editorial</label>
+                    <input asp-for="Editorial" disabled class="form-control" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col md-6">
+                    <label asp-for="AnioPublicacion" class="form-label">Año de publicacion</label>
+                    <input asp-for="AnioPublicacion" disabled class="form-control" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col md-6">
+                    <label asp-for="Paginas" class="form-label">Paginas</label>
+                    <input asp-for="Paginas" disabled class="form-control" />
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-block mt-3">
+
+                <button type="submit" class="btn btnEliminar">Eliminar</button>
+                <a asp-controller="Libro" asp-action="Index" class="btn btn-sucess">Regresar</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" ; />
+
+    }
+}
+
+<style>
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border-radius: 20px;
+    }
+
+    .btnEliminar {
+        background-color: #dc3545;
+        color: white;
+        border-radius: 12px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btnEliminar:hover {
+            background-color: #c82333;
+        }
+
+    }
+</style>
+

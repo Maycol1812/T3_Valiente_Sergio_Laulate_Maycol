@@ -1,0 +1,118 @@
+﻿@model IEnumerable<T3_Valiente_Sergio_Laulate_Maycol.Models.Libro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>MUESTRA DE LIBROS</h1>
+
+<div class="container pt-3">
+    <div class="row mb-3">
+        <div class="col">
+            <h2 class="text-justify mt-5 mb-4">Libros registrados</h2>
+        </div>
+        <div class="col text-end">
+            <a asp-controller="Libro" asp-action="Agregar" class="btn btnAgregar">Nuevo libro</a>
+        </div>
+    </div>
+</br>
+
+@if(Model.Count()>0)
+    {
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Tema</th>
+            <th>Editorial</th>
+            <th>Año de publicacion</th>
+            <th>Paginas</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <th width="20%">@item.Titulo</th>
+                <th width="40%">@item.Autor</th>
+                <th width="10%">@item.Tema</th>
+                <th width="30%">@item.Editorial</th>
+                <th width="10%">@item.AnioPublicacion</th>
+                <th width="10%">@item.Paginas</th>
+                <th>
+                   <div class="w-75 btn-group" role="group">
+                       <a asp-controller="Libro" asp-action="Editar" asp-route-Id="@item.Id" class="btn btnEditar mx-2">Editar</a>
+                       <a asp-controller="Libro" asp-action="Eliminar" asp-route-Id="@item.Id" class="btn btnEliminar mx-2">Eliminar</a>
+                    </div>
+                </th>
+            </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else{<p class="text-center">No se encontraron registros.</p>}
+</div>
+
+
+<style>
+    .table {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+        border-radius: 20px;
+    }
+
+        .table thead th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+    .text-center {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .btnAgregar {
+        background-color: #28a745;
+        color: white;
+        border-radius: 12px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btnAgregar:hover {
+            background-color: #218838;
+        }
+
+    .btnEditar {
+        background-color: #ffc107;
+        color: black;
+        border-radius: 12px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btnEditar:hover {
+            background-color: #e0a800;
+        }
+
+    .btnEliminar {
+        background-color: #dc3545;
+        color: white;
+        border-radius: 12px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btnEliminar:hover {
+            background-color: #c82333;
+        }
+</style>

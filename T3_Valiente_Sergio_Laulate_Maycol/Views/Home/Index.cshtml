@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="cover-container">
+    <div class="cover-content">
+        <h1>EVALUACIÓN T3 - UPN</h1>
+        <div class="details">
+            <div class="section">
+                <h2>ALUMNOS:</h2>
+                <p>Sergio Alessandro Valiente Alayo</p>
+                <p>Maycol Patrick Laulate Cobos</p>
+            </div>
+            <div class="section">
+                <h2>DOCENTE:</h2>
+                <p>Ing. Adolfo Luna Izquierdo</p>
+            </div>
+            <div class="section">
+                <h2>CURSO:</h2>
+                <p>Diseño y Arquitectura de Software</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .cover-container {
+        position: relative;
+        width: 100%;
+        height: 100vh; 
+        background-image: url('~/images/cover.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .cover-content {
+        text-align: center;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+        max-width: 600px;
+        width: 100%; 
+        box-sizing: border-box; 
+    }
+
+        .cover-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+    .details {
+        text-align: left; /* Alineación del texto a la izquierda */
+    }
+
+        .details .section {
+            margin-bottom: 1.5rem;
+        }
+
+        .details h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #ffcc00; /* Color de encabezados */
+        }
+
+        .details p {
+            font-size: 1.25rem;
+            margin: 0;
+            font-weight: 300;
+        }
+
+    /* Ajustes para pantallas más pequeñas sin media queries */
+    .cover-content {
+        padding: 20px;
+    }
+
+        .cover-content h1 {
+            font-size: 2rem;
+        }
+
+    .details h2 {
+        font-size: 1.5rem;
+    }
+
+    .details p {
+        font-size: 1rem;
+    }
+</style>
